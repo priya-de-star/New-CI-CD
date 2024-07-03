@@ -1,0 +1,11 @@
+name: events.yaml
+on: [push,pull request]
+
+jobs:
+    checkout-test:
+        runs-on: ubuntu-latest
+        steps:
+           - run: |
+                 echo $GITHUB_SHA
+                 echo $GITHUB_ref
+           - uses: actions/checkout@v3

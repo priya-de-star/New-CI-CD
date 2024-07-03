@@ -1,0 +1,18 @@
+name: checkout.yaml
+on: pull_request
+
+jobs:
+    echo:
+     runs-on: ubuntu-latest
+     steps:
+     - name: list files of the directory
+       run: ls
+     - name: show current directory
+       run: pwd
+     - name: list of directories
+       run: ls
+     - name: text.txt
+       run: touch
+     
+
+

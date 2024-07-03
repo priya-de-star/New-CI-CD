@@ -2,7 +2,7 @@ name: checkout.yaml
 on: pull_request
 
 jobs:
-    echo:
+   run-shell-commands:
      runs-on: ubuntu-latest
      steps:
      - name: list files of the directory

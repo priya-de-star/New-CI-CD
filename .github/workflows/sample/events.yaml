@@ -7,5 +7,4 @@ jobs:
         steps:
            - run: |
                  echo $GITHUB_SHA
-                 echo $GITHUB_ref
            - uses: actions/checkout@v3

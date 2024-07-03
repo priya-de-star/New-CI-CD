@@ -1,5 +1,5 @@
 name: events.yaml
-on: [push,pull request]
+on: [push,pull_request]
 
 jobs:
     checkout-test:

@@ -1,5 +1,5 @@
 name: checkout.yaml
-on: pull_request
+on: push
 
 jobs:
    run-shell-commands:

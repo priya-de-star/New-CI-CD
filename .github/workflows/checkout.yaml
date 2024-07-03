@@ -11,8 +11,7 @@ jobs:
        run: pwd
      - name: list of directories
        run: ls
-     - name: text.txt
-       run: touch
+     - uses: actions/checkout@v3
      
 
 

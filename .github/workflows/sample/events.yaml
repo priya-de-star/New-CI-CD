@@ -1,7 +1,7 @@
 name: events.yaml
 on: [push,pull_request]
 
-jobs:
+jobs: 
     checkout-test:
         runs-on: ubuntu-latest
         steps:

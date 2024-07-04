@@ -1,22 +1,13 @@
-name: Expressions & Contexts
-on: [push, pull_request, issues, workflow_dispatch]
-run-name: "Expressions & Contexts by @${{ github.actor }}, event: ${{ github.event_name }}"
+name: Experssion.yaml
+on: [pull_request, push, issues, workflow_dispatch]
+run-name: "experssions and all context by @ ${{github.actor}} , ${{github.event_name}}"
+
 jobs:
-  using-expressions-and-contexts:
+  runs-on-issues-pr:
     runs-on: ubuntu-latest
-    steps:
-      - name: Expressions
-        id: expressions
-        run: |
-          echo ${{ 1 }}
-          echo ${{ 'This is a string' }}
-          echo ${{ null }}
-          echo ${{ true }}
-          echo ${{ 1 > 2 }}
-          echo ${{ 'string' == 'String' }}
-          echo ${{ true && false }}
-          echo ${{ true || (false && true) }}
-      - name: Dump Contexts
-        run: |
-          echo '${{ (github) }}'
-          
+    if: contains(fromJson('["push","pull_request"]'), github.event_name)  
+    steps: 
+        - name: Run only if issue has a bug label
+          if: contains(fromJson('["issues","pull_request"]'), github.event_name)
+          run: echo ${{ join(github.event.issue.labels.*.name, ', ') }}
+        

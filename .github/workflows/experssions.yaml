@@ -10,4 +10,7 @@ jobs:
         - name: Run only if issue has a bug label
           if: contains(fromJson('["issues","pull_request"]'), github.event_name)
           run: echo ${{ join(github.event.issue.labels.*.name, ', ') }}
+        - name: Run only if Pull_request has bug label
+          if: contains(fromJson('["pull_request"]'), github.event_name)
+          run: echo ${{join(github.event.pull_request.labels.*.name, ', ')}}
         

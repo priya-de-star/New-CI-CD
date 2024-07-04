@@ -18,11 +18,11 @@ jobs:
            echo ${{ true ||(true && false )}}
       - name: Dump context
         run: |
-            echo ${{fromjson(github)}}
-            echo ${{fromjson(job)}}
-            echo ${{fromjson(secrets)}}
-            echo ${{fromjson(steps)}}
-            echo ${{fromjson(runner)}}
+            echo '${{fromjson(github)}}'
+            echo '${{fromjson(job)}}'
+            echo '${{fromjson(secrets)}}'
+            echo '${{fromjson(steps)}}'
+            echo '${{fromjson(runner)}}'
 
 
         

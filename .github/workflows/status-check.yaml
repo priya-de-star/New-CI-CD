@@ -20,5 +20,8 @@ jobs:
             # if: success() || failure()
               if: always()
               run: echo run on always
+            - name: runs when cancelled
+              if: cancelled()
+              run: echo run on cancelled
             
                

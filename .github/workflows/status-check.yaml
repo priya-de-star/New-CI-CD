@@ -19,7 +19,7 @@ jobs:
             - name: runs always
             # if: success() || failure()
               if: always()
-              run: echo run on always
+              run: exit 1
             - name: runs when cancelled
               if: cancelled()
               run: echo run on cancelled

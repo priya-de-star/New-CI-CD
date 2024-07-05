@@ -13,5 +13,8 @@ jobs:
             - name: Runs on failure
               if: failure() && steps.step-2.conclusion == 'failure'
               run: echo 'step-2 has failed'
+            - name: run on success
+              if: success()
+              run: echo run on success
             
                
